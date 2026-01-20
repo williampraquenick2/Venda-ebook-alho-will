@@ -1,6 +1,4 @@
-
 import React, { useState } from 'react';
-import './types';
 
 const App: React.FC = () => {
   const [isConfirmed, setIsConfirmed] = useState(false);
@@ -11,13 +9,7 @@ const App: React.FC = () => {
 
     setLoading(true);
 
-    // 1. Executar o evento de Purchase no Meta Pixel
-    if (typeof window.fbq === 'function') {
-      window.fbq('track', 'Purchase', { 
-        value: 97.00, 
-        currency: 'BRL' 
-      });
-    }
+    // Meta Pixel tracking removed
 
     // Simular um pequeno delay para feedback visual antes de mostrar a confirmação
     setTimeout(() => {
